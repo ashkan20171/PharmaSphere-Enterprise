@@ -1,0 +1,2 @@
+using System; using System.Collections.Generic;
+namespace AshkanPharmacy.Models { public class Purchase { public int Id{get;set;} public int SupplierId{get;set;} public string InvoiceNo{get;set;} public DateTime CreatedAt{get;set;}=DateTime.Now; public List<PurchaseLine> Lines{get;set;}=new List<PurchaseLine>(); public decimal Total{get;set;} } public class PurchaseLine { public int MedicineId{get;set;} public string BatchNo{get;set;} public DateTime ExpiryDate{get;set;} public int Quantity{get;set;} public decimal UnitCost{get;set;} } }

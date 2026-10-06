@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.props" Condition="Exists('$(MSBuildToolsPath)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E6B6F7E-5D22-4D75-92D2-0C02E19E18A8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AshkanPharmacy</RootNamespace>
+    <AssemblyName>AshkanPharmacy</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType><Optimize>true</Optimize><OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" /><Reference Include="System.Configuration" /><Reference Include="System.Data" /><Reference Include="System.Core" /><Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" /><Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Core\Theme.cs" />
+    <Compile Include="Core\Database.cs" /><Compile Include="Core\MedicineRepository.cs" /><Compile Include="Core\SaleRepository.cs" />
+    <Compile Include="Core\Session.cs" /><Compile Include="Core\AuthService.cs" />
+    <Compile Include="Core\UiKit.cs" /><Compile Include="Core\Localization.cs" /><Compile Include="Core\AppStore.cs" />
+    <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Forms\MedicineEditorForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Include="Forms\LoginForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Include="Forms\MainForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\MainForm.Designer.cs"><DependentUpon>MainForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\MedicinesForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\MedicinesForm.Designer.cs"><DependentUpon>MedicinesForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\SalesForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\SalesForm.Designer.cs"><DependentUpon>SalesForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\InventoryForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\InventoryForm.Designer.cs"><DependentUpon>InventoryForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\SuppliersForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\SuppliersForm.Designer.cs"><DependentUpon>SuppliersForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\PatientsForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\PatientsForm.Designer.cs"><DependentUpon>PatientsForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\ReportsForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\ReportsForm.Designer.cs"><DependentUpon>ReportsForm.cs</DependentUpon></Compile>
+    <Compile Include="Forms\SettingsForm.cs"><SubType>Form</SubType></Compile><Compile Include="Forms\SettingsForm.Designer.cs"><DependentUpon>SettingsForm.cs</DependentUpon></Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup><None Include="App.config" />    <Compile Include="Core\FefoService.cs" />
+    <Compile Include="Core\BackupService.cs" />
+    <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\Prescription.cs" />
+    <Compile Include="Forms\PurchasesForm.cs" />
+    <Compile Include="Forms\AuditLogForm.cs" />
+    <Compile Include="Core\PermissionService.cs" />
+    <Compile Include="Core\AlertService.cs" />
+    <Compile Include="Core\AuditService.cs" />
+    <Compile Include="Core\InvoiceService.cs" />
+    <Compile Include="Forms\AlertsForm.cs" />
+    <Compile Include="Forms\AnalyticsForm.cs" />
+    <Compile Include="Models\MedicineBatch.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Core\Security.cs" />
+    <Compile Include="Core\DashboardRepository.cs" />
+    <Compile Include="Core\PageChrome.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Core\PricingService.cs" />
+    <Compile Include="Forms\PaymentForm.cs" />
+    <Compile Include="Models\HeldSale.cs" />
+    <Compile Include="Core\HeldSaleService.cs" />
+    <Compile Include="Core\ReceiptBuilder.cs" />
+    <Compile Include="Forms\ReceiptPreviewForm.cs" />
+    <Compile Include="Forms\HeldSalesForm.cs" />
+    <Compile Include="Core\BatchRepository.cs" />
+    <Compile Include="Core\PaymentRepository.cs" />
+    <Compile Include="Core\ReturnService.cs" />
+    <Compile Include="Forms\ReturnsForm.cs" />
+    <Compile Include="Models\PatientProfile.cs" />
+    <Compile Include="Core\ClinicalSafetyService.cs" />
+    <Compile Include="Core\PatientRepository.cs" />
+    <Compile Include="Forms\Patient360Form.cs" />
+    <Compile Include="Forms\PrescriptionDispenseForm.cs" />
+    <Compile Include="Models\InsuranceClaim.cs" />
+    <Compile Include="Core\InsuranceService.cs" />
+    <Compile Include="Core\PatientHistoryRepository.cs" />
+    <Compile Include="Forms\InsuranceClaimsForm.cs" />
+    <Compile Include="Core\PermissionMatrix.cs" />
+    <Compile Include="Core\OperationalHealthService.cs" />
+    <Compile Include="Forms\OperationsCenterForm.cs" />
+    <Compile Include="Forms\PermissionMatrixForm.cs" />
+    <Compile Include="Forms\UserManagementForm.cs" />
+    <Compile Include="Forms\SecurityCenterForm.cs" />
+    <Compile Include="Core\MigrationRunner.cs" />
+    <Compile Include="Core\GlobalSearchService.cs" />
+    <Compile Include="Forms\NotificationCenterForm.cs" />
+    <Compile Include="Forms\BackupRestoreCenterForm.cs" />
+</ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

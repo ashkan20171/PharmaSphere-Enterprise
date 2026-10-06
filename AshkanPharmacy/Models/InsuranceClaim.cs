@@ -1,0 +1,2 @@
+using System;
+namespace AshkanPharmacy.Models { public class InsuranceClaim { public long Id{get;set;} public int SaleId{get;set;} public int PatientId{get;set;} public string Provider{get;set;} public string PolicyNo{get;set;} public decimal GrossAmount{get;set;} public decimal CoveredAmount{get;set;} public decimal PatientShare{get;set;} public string Status{get;set;} public DateTime CreatedAt{get;set;}=DateTime.Now; } }

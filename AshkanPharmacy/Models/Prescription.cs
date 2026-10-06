@@ -1,0 +1,1 @@
+using System; namespace AshkanPharmacy.Models { public class Prescription { public int Id{get;set;} public int PatientId{get;set;} public string DoctorName{get;set;} public string PrescriptionNo{get;set;} public string Insurance{get;set;} public DateTime CreatedAt{get;set;}=DateTime.Now; public string Notes{get;set;} } }

@@ -1,0 +1,5 @@
+using System;using System.Drawing;using System.Windows.Forms;using AshkanPharmacy.Core;
+namespace AshkanPharmacy.Forms { public class UserManagementForm:Form {
+ public UserManagementForm(){Text=Localization.Persian?"مدیریت کاربران":"User Management";BackColor=Color.FromArgb(230,239,244);Dock=DockStyle.Fill;FormBorderStyle=FormBorderStyle.None;PageChrome.Header(this,Text,Localization.Persian?"کاربران، نقش‌ها و سیاست‌های دسترسی":"Users, roles and access governance",Color.FromArgb(35,83,121),Color.FromArgb(31,145,130));Build();}
+ void Build(){PageChrome.Stat(this,28,160,Localization.Persian?"کاربران فعال":"Active users","12",Theme.Teal);PageChrome.Stat(this,250,160,Localization.Persian?"نقش‌ها":"Roles","4",Theme.Indigo);PageChrome.Stat(this,472,160,Localization.Persian?"نشست‌ها":"Sessions","3",Theme.Aqua);var g=new DataGridView{Left=28,Top=275,Width=900,Height=350,ReadOnly=true,AllowUserToAddRows=false};Theme.StyleGrid(g);g.Columns.Add("User","User");g.Columns.Add("Role","Role");g.Columns.Add("State","State");g.Rows.Add("admin","Admin","Active");g.Rows.Add("pharmacist","Pharmacist","Active");g.Rows.Add("cashier","Cashier","Active");Controls.Add(g);}
+ } }

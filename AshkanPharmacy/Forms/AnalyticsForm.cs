@@ -1,0 +1,6 @@
+﻿using System.Drawing; using System.Windows.Forms; using AshkanPharmacy.Core;
+namespace AshkanPharmacy.Forms { public class AnalyticsForm:Form {
+ public AnalyticsForm(){Text=Localization.IsFa?"تحلیل عملکرد":"Operations Analytics";BackColor=Color.FromArgb(239,244,252);Dock=DockStyle.Fill;FormBorderStyle=FormBorderStyle.None;var s=DashboardRepository.Load();
+ var title=new Label{Text=Text,Font=new Font("Segoe UI",18,FontStyle.Bold),AutoSize=true,Location=new Point(28,24),ForeColor=Theme.Navy};Controls.Add(title);
+ string[] vals={s.TodaySales.ToString("N0"),s.Medicines.ToString(),s.LowStock.ToString(),s.Expiring.ToString()};string[] names={"Today's sales","Medicines","Low stock","Expiring ≤ 60d"};
+ for(int i=0;i<4;i++){var panel=new Panel{Location=new Point(28+i*205,85),Size=new Size(185,110),BackColor=Color.FromArgb(249,251,255)};panel.Controls.Add(new Label{Text=vals[i],Font=new Font("Segoe UI",17,FontStyle.Bold),AutoSize=true,Location=new Point(16,22),ForeColor=Theme.Navy});panel.Controls.Add(new Label{Text=names[i],AutoSize=true,Location=new Point(16,65),ForeColor=Color.DimGray});Controls.Add(panel);} } } }

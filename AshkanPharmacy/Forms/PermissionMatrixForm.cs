@@ -1,0 +1,5 @@
+using System.Drawing;using System.Windows.Forms;using AshkanPharmacy.Core;
+namespace AshkanPharmacy.Forms { public class PermissionMatrixForm:Form {
+ public PermissionMatrixForm(){Text=Localization.Persian?"ماتریس دسترسی":"Permission Matrix";BackColor=Color.FromArgb(237,237,247);Dock=DockStyle.Fill;FormBorderStyle=FormBorderStyle.None;PageChrome.Header(this,Text,Localization.Persian?"نمای شفاف نقش‌ها و دسترسی‌های عملیاتی":"Transparent role-to-capability mapping",Color.FromArgb(76,83,160),Color.FromArgb(34,126,142));Build();}
+ void Build(){string[] roles={"Admin","Pharmacist","Cashier","Inventory"};string[] perms={"POS","Medicines","Inventory","Patients","Prescriptions","Suppliers","Reports","Settings","Returns","Insurance","Audit"};var g=new DataGridView{Left=28,Top=160,Width=900,Height=470,ReadOnly=true,AllowUserToAddRows=false,RowHeadersVisible=false};Theme.StyleGrid(g);g.Columns.Add("Role","Role");foreach(var x in perms)g.Columns.Add(x,x);foreach(var r in roles){int i=g.Rows.Add();g.Rows[i].Cells[0].Value=r;for(int j=0;j<perms.Length;j++)g.Rows[i].Cells[j+1].Value=PermissionMatrix.Can(r,perms[j])?"✓":"—";}Controls.Add(g);}
+ } }

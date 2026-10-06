@@ -1,0 +1,4 @@
+using System; using System.Data.SqlClient;
+namespace AshkanPharmacy.Core {
+ public static class AuditService { public static void Write(string user,string action,string entity,string details){if(!Database.IsAvailable)return;try{using(var c=Database.Open())using(var q=new SqlCommand("INSERT INTO dbo.AuditLogs(UserName,ActionName,EntityName,Details,CreatedAt) VALUES(@u,@a,@e,@d,SYSUTCDATETIME())",c)){q.Parameters.AddWithValue("@u",(object)user??DBNull.Value);q.Parameters.AddWithValue("@a",action??"");q.Parameters.AddWithValue("@e",entity??"");q.Parameters.AddWithValue("@d",(object)details??DBNull.Value);q.ExecuteNonQuery();}}catch{}} }
+}

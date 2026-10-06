@@ -1,0 +1,4 @@
+using System;using System.Data.SqlClient;
+namespace AshkanPharmacy.Core { public static class MigrationRunner {
+ public static void EnsurePlatformTables(){if(!Database.IsAvailable)return;using(var c=Database.Open()){string sql=@"IF OBJECT_ID('dbo.AppMigrations') IS NULL CREATE TABLE dbo.AppMigrations(Id INT IDENTITY PRIMARY KEY,MigrationKey NVARCHAR(120) UNIQUE NOT NULL,AppliedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME());IF OBJECT_ID('dbo.Notifications') IS NULL CREATE TABLE dbo.Notifications(Id BIGINT IDENTITY PRIMARY KEY,Title NVARCHAR(180) NOT NULL,Body NVARCHAR(500),Severity NVARCHAR(30) NOT NULL DEFAULT 'Info',IsRead BIT NOT NULL DEFAULT 0,CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME());";using(var q=new SqlCommand(sql,c))q.ExecuteNonQuery();}}
+ } }

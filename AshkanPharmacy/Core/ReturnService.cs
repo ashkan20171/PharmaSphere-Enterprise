@@ -1,0 +1,4 @@
+using System;using System.Data.SqlClient;
+namespace AshkanPharmacy.Core { public static class ReturnService {
+ public static void Create(int saleId,decimal amount,string reason,string user){if(amount<=0)throw new ArgumentOutOfRangeException("amount");using(var c=Database.Open())using(var tx=c.BeginTransaction()){try{using(var q=new SqlCommand("INSERT INTO dbo.Returns(SaleId,Reason,Amount,CreatedAt,CreatedBy) VALUES(@s,@r,@a,SYSUTCDATETIME(),@u)",c,tx)){q.Parameters.AddWithValue("@s",saleId);q.Parameters.AddWithValue("@r",reason??"");q.Parameters.AddWithValue("@a",amount);q.Parameters.AddWithValue("@u",user??"");q.ExecuteNonQuery();}tx.Commit();AuditService.Write(user,"Return","Sale",saleId+" / "+amount);}catch{tx.Rollback();throw;}}}
+ } }

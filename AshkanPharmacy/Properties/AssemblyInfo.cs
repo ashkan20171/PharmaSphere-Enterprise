@@ -1,0 +1,2 @@
+﻿using System.Reflection; using System.Runtime.InteropServices;
+[assembly: AssemblyTitle("Ashkan Pharmacy Management System")][assembly: AssemblyDescription("Bilingual pharmacy management desktop application")][assembly: AssemblyCompany("Ashkan")][assembly: AssemblyProduct("Ashkan Pharmacy")][assembly: ComVisible(false)][assembly: Guid("2e329e64-63cc-45aa-a910-84db96c2c9a1")][assembly: AssemblyVersion("1.0.0.0")]

@@ -1,0 +1,2 @@
+﻿using System;
+namespace AshkanPharmacy.Models { public class Medicine { public int Id{get;set;} public string NameFa{get;set;} public string NameEn{get;set;} public string Barcode{get;set;} public string Category{get;set;} public int Stock{get;set;} public int MinStock{get;set;} public decimal BuyPrice{get;set;} public decimal SellPrice{get;set;} public DateTime Expiry{get;set;} public string Batch{get;set;} public string Manufacturer{get;set;} } }

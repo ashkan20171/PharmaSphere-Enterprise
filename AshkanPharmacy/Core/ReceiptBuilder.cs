@@ -1,0 +1,4 @@
+using System;using System.Collections.Generic;using System.Linq;using System.Text;using AshkanPharmacy.Models;
+namespace AshkanPharmacy.Core { public static class ReceiptBuilder {
+ public static string Build(int saleId,IEnumerable<SaleLine> lines,PaymentSummary payment){var b=new StringBuilder();b.AppendLine("PHARMASPHERE ENTERPRISE");b.AppendLine("Sale #"+saleId+"   "+DateTime.Now.ToString("yyyy-MM-dd HH:mm"));b.AppendLine(new string('-',42));foreach(var x in lines)b.AppendLine((x.Medicine.NameEn??x.Medicine.NameFa)+"  x"+x.Quantity+"  "+x.Total.ToString("N0"));b.AppendLine(new string('-',42));b.AppendLine("Subtotal: "+payment.Subtotal.ToString("N0"));b.AppendLine("Discount: "+payment.Discount.ToString("N0"));b.AppendLine("Tax: "+payment.Tax.ToString("N0"));b.AppendLine("PAYABLE: "+payment.Payable.ToString("N0")+" IRR");b.AppendLine("Payment: "+payment.Method);b.AppendLine("Thank you.");return b.ToString();}
+ } }

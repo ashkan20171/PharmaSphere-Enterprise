@@ -1,0 +1,2 @@
+using System;using System.Collections.Generic;
+namespace AshkanPharmacy.Models{public class SaleLine{public Medicine Medicine{get;set;}public int Quantity{get;set;}public decimal Total{get{return Medicine==null?0:Medicine.SellPrice*Quantity;}}}public class SaleTransaction{public int Id{get;set;}public DateTime CreatedAt{get;set;}public decimal Total{get;set;}public string Customer{get;set;}public string Status{get;set;}}}

@@ -1,0 +1,4 @@
+using System;using System.Data.SqlClient;using AshkanPharmacy.Models;
+namespace AshkanPharmacy.Core { public static class PaymentRepository {
+ public static void Save(int saleId,PaymentSummary p){if(!Database.IsAvailable||p==null)return;using(var c=Database.Open())using(var q=new SqlCommand("INSERT INTO dbo.Payments(SaleId,Method,Subtotal,Discount,Tax,Payable,Reference,PaidAt) VALUES(@s,@m,@sub,@d,@t,@p,@r,SYSUTCDATETIME())",c)){q.Parameters.AddWithValue("@s",saleId);q.Parameters.AddWithValue("@m",p.Method.ToString());q.Parameters.AddWithValue("@sub",p.Subtotal);q.Parameters.AddWithValue("@d",p.Discount);q.Parameters.AddWithValue("@t",p.Tax);q.Parameters.AddWithValue("@p",p.Payable);q.Parameters.AddWithValue("@r",(object)p.Reference??DBNull.Value);q.ExecuteNonQuery();}}
+ } }

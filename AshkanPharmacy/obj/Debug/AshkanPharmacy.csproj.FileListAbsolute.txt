@@ -1,0 +1,7 @@
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\bin\Debug\AshkanPharmacy.exe.config
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\bin\Debug\AshkanPharmacy.exe
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\bin\Debug\AshkanPharmacy.pdb
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\obj\Debug\AshkanPharmacy.csproj.AssemblyReference.cache
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\obj\Debug\AshkanPharmacy.csproj.CoreCompileInputs.cache
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\obj\Debug\AshkanPharmacy.exe
+C:\Users\ashkan2026\Desktop\m\AshkanPharmacy\obj\Debug\AshkanPharmacy.pdb

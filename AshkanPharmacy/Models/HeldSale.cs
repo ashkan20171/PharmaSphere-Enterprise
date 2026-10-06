@@ -1,0 +1,2 @@
+using System;using System.Collections.Generic;
+namespace AshkanPharmacy.Models { public class HeldSale { public int Id{get;set;} public string Label{get;set;} public DateTime HeldAt{get;set;}=DateTime.Now; public List<SaleLine> Lines{get;set;}=new List<SaleLine>(); } }

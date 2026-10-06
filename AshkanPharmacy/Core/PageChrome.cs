@@ -1,0 +1,8 @@
+using System.Drawing;using System.Windows.Forms;
+namespace AshkanPharmacy.Core { public static class PageChrome {
+ public static Panel Header(Form f,string title,string subtitle,Color a,Color b){var p=new GradientPanel{Left=24,Top=20,Width=930,Height=112,Anchor=AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right,Color1=a,Color2=b,Radius=22};f.Controls.Add(p);
+ p.Controls.Add(new Label{Text=title,Left=26,Top=18,Width=650,Height=38,Font=Theme.Font(19,FontStyle.Bold),ForeColor=Color.White,BackColor=Color.Transparent});
+ p.Controls.Add(new Label{Text=subtitle,Left=28,Top=58,Width=720,Height=26,Font=Theme.Font(9),ForeColor=Color.FromArgb(225,245,245),BackColor=Color.Transparent});
+ var badge=new Label{Text="●  LIVE",Left=790,Top=32,Width=105,Height=34,TextAlign=ContentAlignment.MiddleCenter,Font=Theme.Font(8,FontStyle.Bold),ForeColor=Color.White,BackColor=Color.FromArgb(34,95,110)};p.Controls.Add(badge);return p;}
+ public static RoundedPanel Stat(Form f,int x,int y,string label,string value,Color accent){var p=new RoundedPanel{Left=x,Top=y,Width=205,Height=88,Radius=17,BackColor=Color.FromArgb(243,249,250),BorderColor=Color.FromArgb(206,224,228)};f.Controls.Add(p);p.Controls.Add(new Panel{Left=0,Top=0,Width=6,Height=88,BackColor=accent});p.Controls.Add(new Label{Text=label,Left=18,Top=13,Width=170,Height=22,Font=Theme.Font(8),ForeColor=Theme.Muted});p.Controls.Add(new Label{Text=value,Left=18,Top=37,Width=170,Height=34,Font=Theme.Font(16,FontStyle.Bold),ForeColor=Theme.Navy});return p;}
+} }
